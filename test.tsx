@@ -29,18 +29,18 @@ export default function PlanCredits() {
             </>
           ) : (
             <>
-              <CreditUsageProgressBar
-                name="Words"
-                usage={currentSubscription?.usage}
-                limit={currentPlan?.word_limit}
-                type="word"
-              />
-              <CreditUsageProgressBar
-                name="Image"
-                usage={currentSubscription?.image_usage}
-                limit={currentPlan?.image_limit}
-                type="image"
-              />
+                      <CreditUsageProgressBar
+                        name="Words"
+                        usage={currentSubscription?.usage}
+                        limit={currentPlan?.word_limit}
+                        type="word"
+                      />
+                      <CreditUsageProgressBar
+                        name="Image"
+                        usage={currentSubscription?.image_usage}
+                        limit={currentPlan?.image_limit}
+                        type="image"
+                      />
             </>
           )}
           {currentSubscription?.earned_bonus ? (
