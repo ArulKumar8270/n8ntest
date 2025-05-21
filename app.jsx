@@ -78,13 +78,6 @@ import {
       (rootState) => rootState.user.isAuthenticated,
     );
   
-    useLayoutEffect(() => {
-      setAppHeight();
-  
-      // window.screen.orientation.onchange = () => setAppHeight()
-      // when screen rotates or goes full screen update height accordingly
-      window.onresize = () => setAppHeight();
-    }, []);
   
     useEffect(() => {
       const user = currentUser?.currentUser;
@@ -199,13 +192,7 @@ import {
                     path="/forgotpassword"
                     element={<ForgotPasswordPage />}
                   />
-                  <Route path="/resetpassword" element={<ResetPasswordPage />} />
                   <Route path="/verify-email" element={<VerifyEmailPage />} />
-                  {/* 
-                  <Route path="/dashboard" element={<DashboardLayout />}>
-                    <Route path="library" element={<LibraryPage />} />
-                    <Route path="dashboard" element={<DashboardPage />} />
-                  </Route> */}
                   // <Route path="/" element={<LibraryPage />} />
                   {/* Pages that require auth */}
                   <Route path="/onboarding" element={<OnBoardPage />} />
@@ -222,30 +209,12 @@ import {
                   />
                   <Route path="/history" element={<HistoryPage />} />
                   <Route path="/chat" element={<ChatPage />} />
-                  {/* <Route path="/knowledgebase" element={<KnowledgebasePage />} /> */}
-                  {/* <Route path="/onboard" element={<OnBoardPage />} /> */}
-                  {/* <Route
-                    path="/voice-generator-prompt"
-                    element={<VoiceGeneratorPromptPage />}
-                  /> */}
+                  
                   <Route path="/profile">
                     <Route path="" element={<ProfilePage />} />
                     <Route path="settings" element={<SettingsPage />} />
                     <Route path="payments" element={<PaymentsPage />} />
                   </Route>
-                  {/* <Route path="/voice-generator" element={<DashboardPage />} /> */}
-                  {/* <Route path="/customtool" element={<CustomToolPage />} /> */}
-                  {/* <Route
-                    path="/customtool/edit"
-                    element={<CustomToolEditPage />}
-                  /> */}
-                  {/* <Route path="/reporttool" element={<ReportToolPage />} /> */}
-                  {/* <Route path="/knowledgebase" element={<KnowledgebasePage />} /> */}
-                  {/* <Route path="/onboard" element={<OnBoardPage />} /> */}
-                  {/* <Route
-                    path="/voice-generator-prompt"
-                    element={<VoiceGeneratorPromptPage />}
-                  /> */}
                   <Route path="/storybook-library">
                     <Route index element={<StorybookLibrary />} />
                     <Route path="details" element={<StorybookDetails />} />
